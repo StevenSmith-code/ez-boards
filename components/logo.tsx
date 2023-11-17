@@ -13,7 +13,12 @@ export default function Logo() {
     <Link href={"/"}>
       <div className="hover:opacity-75 transition items-center gap-x-2 hidden md:flex">
         <Image src="/logo.svg" alt="logo" height={30} width={30} />
-        <p className={cn("text-lg text-neutral-700", headingFont.className)}>
+        <p
+          className={cn(
+            "text-lg text-neutral-700 mt-0.5",
+            headingFont.className
+          )}
+        >
           EZ Boards
         </p>
       </div>
