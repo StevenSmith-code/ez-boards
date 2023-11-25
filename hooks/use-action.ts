@@ -1,5 +1,12 @@
-import { ActionState, FieldErrors } from "@/lib/create-safe-action";
-import { useCallback, useState } from "react";
+import {
+  useCallback,
+  useState,
+} from 'react';
+
+import {
+  ActionState,
+  FieldErrors,
+} from '@/lib/create-safe-action';
 
 type Action<TInput, TOutput> = (
   data: TInput
@@ -30,9 +37,7 @@ export const useAction = <TInput, TOutput>(
         const result = await action(input);
         if (!result) return;
 
-        if (result.fieldErrors) {
-          setFieldErrors(result.fieldErrors);
-        }
+        setFieldErrors(result.fieldErrors);
 
         if (result.error) {
           setError(result.error);
