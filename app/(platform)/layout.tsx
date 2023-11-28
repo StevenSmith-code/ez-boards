@@ -1,10 +1,18 @@
-import React from "react";
-import { ClerkProvider } from "@clerk/nextjs";
+import React from 'react';
+
+import { Toaster } from 'sonner';
+
+import { ClerkProvider } from '@clerk/nextjs';
 
 export default function PlatformLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <ClerkProvider>{children}</ClerkProvider>;
+  return (
+    <ClerkProvider>
+      <Toaster />
+      {children}
+    </ClerkProvider>
+  );
 }
